@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candia Doc Builder - Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 2rem;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .placeholder {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #999;
+        }
+        
+        .placeholder-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Candia Doc Builder Showcase</h1>
+        <p class="subtitle">Examples of generated presentations, documentation, and visual outputs</p>
+        
+        <div class="gallery" id="gallery">
+            <!-- Content will be dynamically loaded or manually added -->
+            <div class="card">
+                <div class="placeholder">
+                    <div class="placeholder-icon">📊</div>
+                    <h3>Thales Alenia Space Presentation</h3>
+                    <p>Add screenshots/GIFs of your generated presentation here</p>
+                    <p style="margin-top: 1rem; font-size: 0.8rem; color: #999;">
+                        Place images in <code>showcase/screenshots/</code> to display them
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <a href="../README.md" class="back-link">← Back to README</a>
+    </div>
+    
+    <script>
+        // Simple image loader - scans showcase/screenshots/ folder
+        // In production, you'd use a static site generator or API
+        // For now, manually add showcase items below or use GitHub Pages with Jekyll
+        
+        const showcaseItems = [
+            // Add your showcase items here:
+            // {
+            //     title: "Thales Architecture Deck",
+            //     image: "screenshots/thales-architecture.png",
+            //     description: "Generated architecture presentation for embedded AI systems"
+            // }
+        ];
+        
+        // Render items if any exist
+        if (showcaseItems.length > 0) {
+            const gallery = document.getElementById('gallery');
+            gallery.innerHTML = showcaseItems.map(item => `
+                <div class="card">
+                    <img src="${item.image}" alt="${item.title}" />
+                    <div class="card-content">
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>
+
