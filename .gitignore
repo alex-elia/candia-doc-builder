@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Editors
+.vscode/
+.idea/
+
+# Generated artifacts
+*.pptx
+*.pdf
+*.aux
+*.log
+*.out
+*.toc
+*.mp4
+*.mov
+
+# OS
+.DS_Store
+Thumbs.db
